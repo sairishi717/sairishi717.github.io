@@ -169,7 +169,7 @@
             <li><strong>Interests:</strong> Ed-tech, health & wellness, responsible AI</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" id="value">
           <h3>Personal Value Proposition</h3>
           <p>
             I turn complex data into confident decisions. From ingestion to insight, I design resilient pipelines and human-centered ML that teams can trust — complete with clear documentation, observability, and a feedback loop that keeps models honest and useful.
@@ -177,6 +177,10 @@
           <div class="note">
             Clear metrics, clean interfaces, and thoughtful defaults — that’s how I reduce cognitive load and increase adoption.
           </div>
+          <h4>Target Audience</h4>
+          <p style="margin-top:6px;">
+            This portfolio is designed for hiring managers, data leaders, and faculty evaluating my ability to build responsible, end-to-end AI solutions. It highlights how I think about users, ethics, monitoring, and iterative improvement — not just models in isolation.
+          </p>
         </div>
       </div>
     </section>
@@ -184,7 +188,7 @@
     <section id="artifacts" class="reveal">
       <div class="section-title">
         <h2>Course Artifacts</h2>
-        <p>Four key artifacts demonstrating applied learning</p>
+        <p>Five key artifacts demonstrating applied learning</p>
       </div>
       <div class="grid cols-3" id="artifactGrid">
         <!-- Artifact 1: Child Activity Planner (detailed) -->
@@ -193,12 +197,12 @@
           "intro":"A recommendation web app that curates age-appropriate activities tailored by time, materials, and learning goals.",
           "description":"Combines a light-weight content-based model with rules for safety and age-appropriateness. Incorporates parent/child feedback to improve suggestions over time.",
           "objective":"Explore recommender design for educational use-cases while practicing data collection, feature engineering, and responsible AI considerations.",
-          "process":"1) Defined user requirements. 2) Collected/curated activity metadata (age, duration, materials, outcomes). 3) Engineered features (skills, categories, seasonality). 4) Built content-based cosine similarity with guardrails. 5) Designed feedback loop (thumbs + notes). 6) Documented evaluation and bias checks.",
-          "tools":"Python (Pandas, scikit-learn), SQLite, Streamlit, Figma, Git",
-          "value":"Demonstrates end-to-end ML product thinking — data spec, modeling, UX, safety, and iteration.",
-          "unique":"Explainable tags, parental constraints, and transparent guardrails.",
-          "relevance":"Aligned with ed-tech roles seeking applied ML with usability and safety in mind.",
-          "references":"(Optional) Add dataset or paper links used for taxonomy or evaluation."
+          "process":"1) Defined user requirements. 2) Collected and curated activity metadata (age, duration, materials, outcomes). 3) Engineered features (skills, categories, seasonality). 4) Built content-based cosine similarity with guardrails. 5) Designed a feedback loop (thumb ratings and notes). 6) Documented evaluation and bias checks.",
+          "tools":"Python (Pandas, scikit-learn), SQLite, Streamlit, Figma, Git.",
+          "value":"Demonstrates end-to-end ML product thinking — data specification, modeling, UX, safety, and iteration.",
+          "unique":"Explainable tags, parental constraints, and transparent guardrails that parents can understand and trust.",
+          "relevance":"Aligned with ed-tech roles seeking applied ML with usability, safety, and human-centered design.",
+          "references":"Internal activity taxonomy, child development resources, and standard recommender system design patterns."
         }'>
           <span class="tag">Featured</span>
           <div class="thumb"><img alt="Children learning" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1460&auto=format&fit=crop"/></div>
@@ -210,23 +214,22 @@
             <li><strong>Value:</strong> Shows ability to ship a safe, explainable ML feature</li>
           </ul>
           <div class="cta">
-            <button class="btn btn-primary" data-open>View Details</button>
             <button class="btn btn-ghost" data-copy>Copy Template</button>
           </div>
         </article>
 
-         <!-- Artifact 2: Machine Learning vs Deep Learning -->
+        <!-- Artifact 2: Machine Learning vs Deep Learning -->
         <article class="card" data-artifact='{
           "title": "Machine Learning vs Deep Learning",
-          "intro": "This artifact compares machine learning and deep learning using two real-world scenarios: customer churn prediction in telecom and image recognition for automatic photo tagging.",
-          "description": "For machine learning, the example focuses on churn prediction in telecom companies such as Verizon or AT&T, where algorithms like Support Vector Machines (SVMs) use structured, labeled data—call duration, billing history, and complaint records—to estimate which customers are likely to leave. For deep learning, the example highlights Facebook’s automatic photo tagging system, where convolutional neural networks (CNNs) learn patterns directly from raw pixel data to recognize faces at scale.",
-          "objective": "To explain when traditional machine learning is a better fit and when deep learning becomes necessary, with attention to data type, feature engineering, and computational demands.",
-          "process": "1) Chose telecom churn as a structured data use case. 2) Identified SVMs as an appropriate ML method for labeled customer records. 3) Described why deep learning is not always ideal for smaller, structured datasets that do not require complex feature extraction. 4) Selected Facebook photo tagging as an image-based use case. 5) Explained how CNNs automatically extract hierarchical visual features from large volumes of images. 6) Summarized key insights from academic references to support both examples.",
-          "tools": "Conceptual comparison supported by published research on machine learning and deep learning, with SVMs and CNNs as reference algorithms.",
-          "value": "Shows the ability to move beyond textbook definitions and clearly justify why ML or DL is preferred in a given situation, based on data structure, scale, and problem complexity.",
-          "unique": "Grounded in realistic scenarios—telecom churn and large-scale photo tagging—rather than only abstract theory, making the comparison more practical and relatable.",
-          "relevance": "Helps stakeholders and teammates choose modeling approaches more thoughtfully, instead of defaulting to deep learning for every problem.",
-          "references": "Goodfellow, Bengio, & Courville (2016); Jordan & Mitchell (2015); Kotu & Deshpande (2018); LeCun, Bengio, & Hinton (2015). See attached PDF: 2.3_ML_vs_DL_Sai_Rishi_Varma.pdf for the full write-up and citations."
+          "intro": "A structured comparison between traditional machine learning and deep learning grounded in two real-world scenarios.",
+          "description": "The artifact contrasts ML and DL using telecom churn prediction with structured customer data versus Facebook-style automatic photo tagging with large-scale image data. It explains why SVMs work well for labeled, tabular churn data, while convolutional neural networks are better suited for high-dimensional visual inputs.",
+          "objective": "Clarify when traditional ML methods are preferable and when deep learning becomes essential, based on data type, scale, and problem complexity.",
+          "process": "1) Selected telecom churn as an ML use-case with structured data. 2) Mapped features such as call duration, billing history, and complaints to SVM-style models. 3) Selected automatic photo tagging as a DL use-case. 4) Explained how CNNs learn hierarchical features from raw pixels. 5) Summarized key lessons from literature on ML and DL trade-offs.",
+          "tools": "Conceptual analysis supported by references to SVMs, neural networks, and CNN architectures.",
+          "value": "Helps non-technical stakeholders and junior practitioners understand that deep learning is not automatically the best option for every problem.",
+          "unique": "Uses realistic telecom and social media scenarios instead of abstract toy problems, making the comparison more intuitive and concrete.",
+          "relevance": "Supports better model selection in real projects by aligning technique choice with problem constraints and data realities.",
+          "references": "Goodfellow et al. (2016); Jordan & Mitchell (2015); LeCun et al. (2015); Kotu & Deshpande (2018). See 2.3_ML_vs_DL_Sai_Rishi_Varma.pdf for full write-up."
         }'>
           <div class="thumb"><img alt="ML vs DL concept" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1460&auto=format&fit=crop"/></div>
           <h3>Machine Learning vs Deep Learning</h3>
@@ -234,7 +237,7 @@
           <ul class="list">
             <li><strong>Objective:</strong> Explain when to use ML vs DL</li>
             <li><strong>Format:</strong> Short written analysis with real-world examples</li>
-            <li><strong>Value:</strong> Connects theory to realistic use-cases</li>
+            <li><strong>Value:</strong> Connects theory to realistic use cases</li>
           </ul>
           <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">
             PDF artifact:
@@ -252,14 +255,14 @@
         <article class="card" data-artifact='{
           "title":"FitnessBuddy – AI Fitness Chatbot",
           "intro":"A custom Gemini Gem that acts as a friendly, emoji-loving fitness coach for goals like weight loss, muscle gain, and strength.",
-          "description":"Built using Google Gemini’s Explore Gems, FitnessBuddy combines a carefully engineered system prompt with uploaded PDFs as a mini knowledge base to deliver personalized workouts, nutrition tips, and motivation.",
+          "description":"Built using Google Gemini’s Explore Gems, FitnessBuddy combines a carefully engineered system prompt with uploaded PDFs as a mini knowledge base to deliver personalized workouts, nutrition tips, and motivation. The tone is supportive and slightly playful to keep users engaged.",
           "objective":"Explore how generative AI and prompt engineering can be used to create a domain-specific assistant that feels like a supportive gym buddy instead of a generic chatbot.",
-          "process":"1) Researched multiple LLMs and no-code options. 2) Defined FitnessBuddy’s persona, tone, and behavior guidelines. 3) Designed required user inputs (goal, level, equipment, preferences). 4) Created and iterated on the Gemini Gem instructions. 5) Uploaded supporting PDFs as context. 6) Tested responses and refined prompts for accuracy, safety, and fun.",
+          "process":"1) Researched LLM options and Gemini Gems. 2) Defined FitnessBuddy’s persona, tone, and safety boundaries. 3) Designed input fields for goal, level, equipment, and preferences. 4) Iterated on the system prompt for clarity and consistency. 5) Uploaded fitness PDFs as context. 6) Tested conversations and refined prompts for accuracy, reliability, and motivation.",
           "tools":"Google Gemini (Gems / Explore Gems), prompt engineering, PDF knowledge files.",
-          "value":"Shows the ability to turn research on LLMs into a working, user-friendly assistant that blends technical depth with approachable, playful communication.",
-          "unique":"Sarcastic, emoji-rich tone, domain-specific guidance, and reusable Gem configuration.",
-          "relevance":"Relevant for roles involving conversational AI, product-minded use of LLMs, and AI-powered wellness or coaching products.",
-          "references":"Gemini FitnessBuddy Gem (live link) and FitnessBuddy project overview PDF (see links on card)."
+          "value":"Demonstrates the ability to turn LLM research into a practical, user-friendly assistant with clear guardrails and a distinct voice.",
+          "unique":"A domain-specific, personality-driven chatbot that balances encouragement with realistic, safe guidance.",
+          "relevance":"Relevant to roles working on conversational AI, AI copilots, and domain-focused assistants in health and wellness.",
+          "references":"Gemini FitnessBuddy Gem (live link) and FITNESS BUDDY.pdf project overview."
         }'>
           <div class="thumb"><img alt="Fitness chatbot" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1460&auto=format&fit=crop"/></div>
           <h3>FitnessBuddy – AI Fitness Chatbot</h3>
@@ -274,7 +277,7 @@
             <a href="https://gemini.google.com/gem/1kweduCrRTL5iK0R_lIDv-JZTj7t7vKOm?usp=sharing" target="_blank">
               Open FitnessBuddy in Gemini
             </a>
-			</p>>
+          </p>
           <p style="font-size:.85rem;color:var(--muted);margin-top:2px;">
             PDF overview:
             <a href="FITNESS%20BUDDY.pdf" target="_blank">
@@ -286,35 +289,63 @@
             <button class="btn btn-ghost" data-copy>Copy Template</button>
           </div>
         </article>
-		<!-- Artifact 4: AI Chatbot Decision-Making Activity -->
-		<article class="card" data-artifact='{
-		"title":"AI Chatbot Decision-Making Activity",
-		"intro":"A guided, multi-turn interaction with an AI coach designed to strengthen reasoning about data quality, model risk, fairness, and decision-making trade-offs.",
-		"description":"In this activity, I collaborated with an AI chatbot to analyze complex data science scenarios including missing data (Scenario 1), label noise and class imbalance (Scenario 2), and model drift in credit scoring (Scenario 3). Each scenario required me to think through model choices, ethical considerations, evaluation metrics, and practical guardrails while the AI asked probing questions.",
-		"objective":"To practice structured decision-making in ambiguous, real-world ML settings and articulate the reasoning behind my modeling choices.",
-		"process":"1) Reviewed the scenario provided. 2) Asked the AI clarifying questions. 3) Evaluated trade-offs between bias/variance, fairness, interpretability, and operational constraints. 4) Proposed a final decision. 5) Reflected on model governance and responsible AI practices.",
-		"tools":"ChatGPT / Gemini, prompt engineering, scenario reasoning, ML evaluation frameworks.",
-		"value":"Shows ability to justify ML decisions, balance competing priorities, and communicate model rationale clearly—key skills for applied data science and AI leadership roles.",
-		"unique":"The artifact captures not just a final answer but the evolving reasoning process shaped through multi-turn dialogue.",
-		"relevance":"Highly relevant to roles requiring ML governance, responsible AI, decision-making under uncertainty, and communication with cross-functional stakeholders.",
-		"references":"Scenario summaries, AI conversation transcripts (available upon request)."
-		}'>
-			<div class="thumb"><img alt="AI Chat Interaction" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1460&auto=format&fit=crop"/></div>
-			<h3>AI Chatbot Decision-Making Activity</h3>
-			<p class="meta">Reasoning · Responsible AI · Scenario Simulation</p>
-			<ul class="list">
-			<li><strong>Objective:</strong> Practice reasoning through ML trade-offs</li>
-			<li><strong>Format:</strong> Multi-turn AI coaching dialogue</li>
-			<li><strong>Value:</strong> Demonstrates thoughtful, explainable ML decisions</li>
-			</ul>
-			<p style="font-size:.85rem;color:var(--muted);margin-top:4px;">
-		Summary document available on request.
-		</p>
-		<div class="cta">
-		<button class="btn btn-primary" data-open>View Details</button>
-		<button class="btn btn-ghost" data-copy>Copy Template</button>
-		</div>
-		</article>
+
+        <!-- Artifact 4: AI Chatbot Decision-Making Activity -->
+        <article class="card" data-artifact='{
+          "title":"AI Chatbot Decision-Making Activity",
+          "intro":"A guided, multi-turn interaction with an AI coach designed to strengthen reasoning about data quality, model risk, fairness, and decision-making trade-offs.",
+          "description":"In this activity, I collaborated with an AI chatbot to analyze complex data science scenarios including missing data, label noise, class imbalance, and model drift in credit scoring. Each scenario required structured thinking about model choices, ethics, evaluation metrics, and guardrails.",
+          "objective":"Practice structured decision-making in ambiguous, real-world ML settings and articulate the reasoning behind modeling choices.",
+          "process":"1) Reviewed the provided scenario. 2) Asked the AI clarifying questions. 3) Evaluated trade-offs between bias/variance, fairness, interpretability, and operational constraints. 4) Proposed a final decision. 5) Reflected on model governance and responsible AI practices.",
+          "tools":"ChatGPT / Gemini, prompt engineering, ML evaluation and governance frameworks.",
+          "value":"Shows the ability to justify ML decisions, balance competing priorities, and communicate model rationale clearly to non-technical stakeholders.",
+          "unique":"Captures not just final answers but the evolving reasoning process shaped through multi-turn dialogue.",
+          "relevance":"Highly relevant to roles involving ML governance, responsible AI, and decision-making under uncertainty.",
+          "references":"Scenario descriptions and conversation transcripts (summarized in the associated write-up)."
+        }'>
+          <div class="thumb"><img alt="AI Chat Interaction" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1460&auto=format&fit=crop"/></div>
+          <h3>AI Chatbot Decision-Making Activity</h3>
+          <p class="meta">Reasoning · Responsible AI · Scenario Simulation</p>
+          <ul class="list">
+            <li><strong>Objective:</strong> Practice reasoning through ML trade-offs</li>
+            <li><strong>Format:</strong> Multi-turn AI coaching dialogue</li>
+            <li><strong>Value:</strong> Demonstrates thoughtful, explainable ML decisions</li>
+          </ul>
+          <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">
+            Summary document available on request.
+          </p>
+          <div class="cta">
+            <button class="btn btn-primary" data-open>View Details</button>
+            <button class="btn btn-ghost" data-copy>Copy Template</button>
+          </div>
+        </article>
+
+        <!-- Artifact 5: Reflective Report on AWS SageMaker Predictive Modeling Project -->
+        <article class="card" data-artifact='{
+          "title":"Reflective Report on an AWS SageMaker Predictive Modeling Project",
+          "intro":"A reflective report on building, evaluating, and ethically assessing a customer churn prediction model using AWS SageMaker.",
+          "description":"This artifact walks through a real-world churn prediction project implemented with AWS SageMaker. It covers project objectives, data preprocessing, model selection (XGBoost and others), validation strategy, performance metrics, and a detailed reflection on ethical considerations such as bias, fairness, and privacy, along with proposed improvements.",
+          "objective":"Connect hands-on MLOps and modeling work in the cloud with responsible AI practices, including monitoring, retraining, and governance.",
+          "process":"1) Defined business objective: predicting churn within 60 days. 2) Cleaned and preprocessed ~120k customer records (handling missing values, outliers, and imbalance). 3) Trained and tuned multiple models using SageMaker built-in algorithms. 4) Selected XGBoost based on accuracy, precision, recall, and F1. 5) Reflected on bias, data privacy, and monitoring gaps. 6) Proposed enhancements using SageMaker Clarify, Model Monitor, and Pipelines.",
+          "tools":"AWS SageMaker (XGBoost, Experiments, Hyperparameter Tuning, Model Monitor), Python (Pandas, scikit-learn), S3, IAM.",
+          "value":"Demonstrates not just the ability to ship a working ML model in the cloud, but also to critically evaluate its lifecycle, risks, and long-term maintenance.",
+          "unique":"Blends technical MLOps detail with an honest, forward-looking ethical and monitoring plan, showing growth in both engineering and leadership mindset.",
+          "relevance":"Highly relevant to data engineering, ML engineering, and applied data science roles that require building reliable, monitored, and responsible models in production environments.",
+          "references":"Internal project notes; best practices inspired by AWS documentation and standard MLOps/ML fairness literature."
+        }'>
+          <div class="thumb"><img alt="Cloud ML pipeline" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1460&auto=format&fit=crop"/></div>
+          <h3>Reflective Report on an AWS SageMaker Predictive Modeling Project</h3>
+          <p class="meta">MLOps · AWS · Reflective Practice</p>
+          <ul class="list">
+            <li><strong>Objective:</strong> Reflect on end-to-end ML in AWS SageMaker</li>
+            <li><strong>Tools:</strong> SageMaker, XGBoost, Python, S3</li>
+            <li><strong>Value:</strong> Shows technical depth plus ethical awareness</li>
+          </ul>
+          <div class="cta">
+            <button class="btn btn-primary" data-open>View Details</button>
+            <button class="btn btn-ghost" data-copy>Copy Template</button>
+          </div>
+        </article>
       </div>
     </section>
 
