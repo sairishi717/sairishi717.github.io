@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Rishi Varma Dendukuri | AI & Machine Learning Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121935;
+      --card: rgba(255,255,255,0.08);
+      --card-solid: #121a33;
+      --text: #eef2ff;
+      --muted: #b9c3e6;
+      --accent: #6ee7f9;
+      --accent-2: #a78bfa;
+      --line: rgba(255,255,255,0.14);
+      --success: #34d399;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(110,231,249,0.16), transparent 25%),
+        radial-gradient(circle at 90% 10%, rgba(167,139,250,0.18), transparent 25%),
+        linear-gradient(180deg, #08101d 0%, #0d1430 48%, #0a1020 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(10,16,32,0.7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07101a;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 12px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07101a;
+      box-shadow: 0 18px 40px rgba(110,231,249,0.18);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(110,231,249,0.25);
+      background: rgba(110,231,249,0.08);
+      color: var(--accent);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 0.98;
+      margin: 0 0 16px;
+      letter-spacing: -1.8px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin: 0 0 22px;
+      max-width: 64ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -30% auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110,231,249,0.22), transparent 70%);
+      filter: blur(10px);
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #08101d;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      margin-bottom: 18px;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,0.05);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      margin: 0 0 8px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+      line-height: 1.7;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .card h3 { margin-top: 0; }
+    .card p, .card li { color: var(--muted); line-height: 1.75; }
+
+    .highlight {
+      background: linear-gradient(135deg, rgba(110,231,249,0.12), rgba(167,139,250,0.12));
+      border-color: rgba(110,231,249,0.25);
+    }
+
+    .artifact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .artifact-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .artifact-media {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: linear-gradient(135deg, #16203b, #0e1833);
+    }
+
+    .artifact-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .artifact-card:hover .artifact-media img { transform: scale(1.04); }
+
+    .artifact-body {
+      padding: 22px;
+    }
+
+    .artifact-tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(110,231,249,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(110,231,249,0.22);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .artifact-body h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+
+    .artifact-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .meta-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .meta-box strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .meta-box span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .details {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .detail-row {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .detail-row strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .detail-row p { margin: 0; }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pillar {
+      padding: 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .pillar h4 { margin: 10px 0 8px; }
+    .pillar p { margin: 0; color: var(--muted); }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .timeline-item .year {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(110,231,249,0.12), rgba(167,139,250,0.12));
+      border: 1px solid rgba(110,231,249,0.2);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(4, 8, 18, 0.82);
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal.active { display: grid; }
+
+    .modal-content {
+      width: min(1100px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: #0c1328;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 18px;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 4px;
+      margin-left: auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      display: none;
+      place-items: center;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #06101a;
+      font-weight: 900;
+      box-shadow: var(--shadow);
+      z-index: 1001;
+    }
+
+    .scroll-top.show { display: grid; }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid-2,
+      .artifact-grid,
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .stats,
+      .artifact-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav { align-items: flex-start; }
+      .nav-links { justify-content: flex-start; }
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero {
+        padding-top: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a href="#home" class="brand">
+          <span class="brand-badge">AA</span>
+          <span>Sai Rishi Varma Dendukuri</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#value">Value Proposition</a>
+          <a href="#artifacts">Artifacts</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+          <a href="#artifacts" class="btn btn-primary">View Portfolio</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">AI • Machine Learning • Data Analytics Portfolio</div>
+        <h1>Building practical AI solutions with clarity, purpose, and impact.</h1>
+        <p>
+          I am <strong>Sai Rishi Varma Dendukuri</strong>, a data and AI professional focused on translating machine learning concepts into practical, user-centered solutions. This portfolio highlights my academic artifacts, technical growth, and the value I bring through analytical thinking, structured problem-solving, and thoughtful design.
+        </p>
+        <div class="hero-actions">
+          <a href="#artifacts" class="btn btn-primary">Explore Artifacts</a>
+          <a href="#about" class="btn btn-secondary">Read My Bio</a>
+        </div>
+        
+          <div class="stat"><strong>AI/ML</strong><span>Focused on machine learning, analytics, and applied solutions</span></div>
+          <div class="stat"><strong>Modern</strong><span>Responsive, interactive, and portfolio-ready design</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="avatar">AI</div>
+        <h3>Portfolio Snapshot</h3>
+        <p style="color: var(--muted); line-height: 1.75; margin: 0;">
+          This website is structured to align with professional portfolio requirements by including a professional bio, personal value proposition, and artifact entries that follow a consistent academic template.
+        </p>
+        <div class="chips">
+          <span class="chip">Professional Bio</span>
+          <span class="chip">Value Proposition</span>
+          <span class="chip">Artifact Template</span>
+          <span class="chip">User-Friendly Design</span>
+          <span class="chip">Portfolio Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <h2>Professional Bio</h2>
+          <p>A concise introduction to my background, journey, and long-term goals.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card highlight">
+          <h3>Who I Am</h3>
+          <p>
+            I am a graduate student and AI-focused data professional with experience in analytics, dashboarding, data engineering, and machine learning applications. My academic and professional work centers on using data to solve real-world problems through thoughtful analysis, clear communication, and practical implementation.
+          </p>
+          <p>
+            My interests include machine learning, intelligent systems, recommendation engines, and user-centered AI applications. I enjoy creating solutions that are not only technically sound but also meaningful for the people who use them.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Professional Journey & Aspirations</h3>
+          <p>
+            My journey has been shaped by a strong foundation in data analysis and a growing focus on AI and machine learning. I aspire to continue building systems that combine data, automation, and intelligent recommendations to improve decision-making and user experiences. Long term, I aim to contribute as an AI engineer or data scientist who can bridge technical depth with practical business value.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="section-head">
+        <div>
+          <h2>Personal Value Proposition</h2>
+          <p>What makes my work distinctive and why it matters.</p>
+        </div>
+      </div>
+      <div class="card">
+        <p>
+          I bring a combination of analytical rigor, creativity, and structured execution to every project. My value lies in turning complex ideas into organized, practical solutions that are easy to understand and meaningful to real users. Whether I am designing a recommendation system, presenting machine learning concepts visually, or building data-driven tools, I focus on clarity, usability, and impact.
+        </p>
+        <div class="pillars" style="margin-top: 18px;">
+          <div class="pillar">
+            <div>📊</div>
+            <h4>Analytical Thinking</h4>
+            <p>I break down complex problems into logical, actionable steps.</p>
+          </div>
+          <div class="pillar">
+            <div>🤖</div>
+            <h4>AI Application</h4>
+            <p>I connect machine learning ideas to practical, user-facing solutions.</p>
+          </div>
+          <div class="pillar">
+            <div>🎯</div>
+            <h4>User Focus</h4>
+            <p>I prioritize clarity, accessibility, and relevance for the intended audience.</p>
+          </div>
+          <div class="pillar">
+            <div>✨</div>
+            <h4>Professional Delivery</h4>
+            <p>I present work in a polished, structured, and portfolio-ready format.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="artifacts">
+      <div class="section-head">
+        <div>
+          <h2>Portfolio Artifacts</h2>
+          <p>The current portfolio includes one featured artifact, structured using the course template with title, introduction, description, objective, process, tools and technologies used, value proposition, unique value, relevance, and references when applicable.</p>
+        </div>
+      </div>
+
+      <div class="artifact-grid">
+        <article class="card artifact-card">
+          <div class="artifact-media" data-open-modal="infographicModal" style="cursor:pointer;">
+            <img src="1.5_Assignment.png" alt="Machine Learning Toolkit infographic" />
+          </div>
+          <div class="artifact-body">
+            <span class="artifact-tag">Artifact 1</span>
+            <h3>The Machine Learning Toolkit: A Framework of 10 Essential Algorithms</h3>
+            <p>
+              A visual framework that organizes key machine learning algorithms across supervised, unsupervised, and generative learning contexts for easy comparison and interpretation.
+            </p>
+            <div class="artifact-meta">
+              <div class="meta-box"><strong>Objective</strong><span>To clearly explain and compare foundational machine learning algorithms.</span></div>
+              <div class="meta-box"><strong>Tools</strong><span>Canva-style infographic design, course research, visual layout principles.</span></div>
+            </div>
+            <div class="details">
+              <div class="detail-row"><strong>Introduction</strong><p>This artifact presents a structured overview of important machine learning algorithms and their relationships across major AI domains.</p></div>
+              <div class="detail-row"><strong>Description</strong><p>The infographic highlights 10 algorithms, classifies them by learning type, and connects each to use cases such as tabular analytics, computer vision, NLP, and generative AI.</p></div>
+              <div class="detail-row"><strong>Process</strong><p>I selected representative algorithms, grouped them into logical categories, summarized how each works, and translated the information into a visually organized format that is easy to understand.</p></div>
+              <div class="detail-row"><strong>Value Proposition</strong><p>This artifact demonstrates my ability to simplify technical concepts, create educational visuals, and communicate machine learning knowledge in a professional format.</p></div>
+              <div class="detail-row"><strong>Unique Value</strong><p>It combines technical understanding with visual storytelling, making complex material accessible for academic or professional audiences.</p></div>
+              <div class="detail-row"><strong>Relevance</strong><p>This work is relevant to AI and machine learning studies because it shows conceptual understanding, categorization skills, and the ability to communicate clearly.</p></div>
+              <div class="detail-row"><strong>References</strong><p>Course materials and general machine learning concepts were used to develop this educational summary. Add formal references here if required by your instructor.</p></div>
+            </div>
+            <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
+              <button class="btn btn-primary" data-open-modal="infographicModal">Open Infographic</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      
+    </section>
+
+    
+
+    <section id="contact">
+      <div class="cta">
+        <h2 style="margin-top: 0;">Portfolio-Ready and Easy to Share</h2>
+        <p style="color: var(--muted); max-width: 70ch; margin: 0 auto 18px; line-height: 1.75;">
+          This HTML portfolio is designed to be uploaded to GitHub Pages, Netlify, Google Drive, or any shareable hosting platform so your instructor can access it easily.
+        </p>
+        <a class="btn btn-primary" href="#home">Back to Top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© 2026 Sai Rishi Varma Dendukuri • AI & Machine Learning Portfolio</div>
+      <div>Note: Reflections should be submitted separately in Brightspace, not included in the portfolio.</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="infographicModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" data-close-modal>&times;</button>
+      <img src="1.5_Assignment.png" alt="Full Machine Learning Toolkit infographic" style="width:100%;height:auto;" />
+    </div>
+  </div>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <script>
+    const modalTriggers = document.querySelectorAll('[data-open-modal]');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    modalTriggers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = document.getElementById(btn.dataset.openModal);
+        if (modal) {
+          modal.classList.add('active');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.modal');
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.active').forEach(modal => {
+          modal.classList.remove('active');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
