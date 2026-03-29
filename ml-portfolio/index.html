@@ -3,33 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sai Rishi Varma Dendukuri | AI & Machine Learning Portfolio</title>
+  <title>Sai Rishi Varma Dendukuri | Professional Portfolio</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121935;
-      --card: rgba(255,255,255,0.08);
-      --card-solid: #121a33;
-      --text: #eef2ff;
-      --muted: #b9c3e6;
-      --accent: #6ee7f9;
-      --accent-2: #a78bfa;
-      --line: rgba(255,255,255,0.14);
-      --success: #34d399;
-      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --bg: #f6f8fc;
+      --bg-soft: #eef2ff;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --accent: #06b6d4;
+      --accent-soft: #ecfeff;
+      --line: #e2e8f0;
+      --success: #10b981;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
       --radius: 24px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 20%, rgba(110,231,249,0.16), transparent 25%),
-        radial-gradient(circle at 90% 10%, rgba(167,139,250,0.18), transparent 25%),
-        linear-gradient(180deg, #08101d 0%, #0d1430 48%, #0a1020 100%);
+        radial-gradient(circle at top left, rgba(79, 70, 229, 0.08), transparent 22%),
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #f6f8fc 48%, #eef3ff 100%);
       min-height: 100vh;
     }
 
@@ -45,8 +48,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(10,16,32,0.7);
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.82);
       border-bottom: 1px solid var(--line);
     }
 
@@ -64,14 +67,15 @@
       align-items: center;
       font-weight: 800;
       letter-spacing: 0.2px;
+      color: var(--text);
     }
 
     .brand-badge {
       width: 42px;
       height: 42px;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07101a;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
       display: grid;
       place-items: center;
       font-weight: 900;
@@ -91,7 +95,7 @@
       transition: 0.2s ease;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: var(--primary); }
 
     .btn {
       border: 1px solid transparent;
@@ -107,21 +111,23 @@
     }
 
     .btn:hover { transform: translateY(-2px); }
+
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #07101a;
-      box-shadow: 0 18px 40px rgba(110,231,249,0.18);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      box-shadow: 0 16px 32px rgba(79, 70, 229, 0.18);
     }
+
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
+      background: #ffffff;
       color: var(--text);
       border-color: var(--line);
     }
 
     .hero {
-      padding: 72px 0 40px;
+      padding: 76px 0 42px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
@@ -130,9 +136,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      border: 1px solid rgba(110,231,249,0.25);
-      background: rgba(110,231,249,0.08);
-      color: var(--accent);
+      border: 1px solid rgba(79, 70, 229, 0.15);
+      background: rgba(79, 70, 229, 0.08);
+      color: var(--primary);
       padding: 10px 14px;
       border-radius: 999px;
       font-size: 0.9rem;
@@ -141,16 +147,17 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 5vw, 4.6rem);
-      line-height: 0.98;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.02;
       margin: 0 0 16px;
       letter-spacing: -1.8px;
+      color: var(--text);
     }
 
     .hero p {
       color: var(--muted);
       font-size: 1.08rem;
-      line-height: 1.75;
+      line-height: 1.78;
       margin: 0 0 22px;
       max-width: 64ch;
     }
@@ -162,37 +169,38 @@
       margin-bottom: 24px;
     }
 
-    .stats {
+    .hero-highlights {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .stat {
-      padding: 18px;
-      background: var(--card);
+    .highlight-box {
+      padding: 20px;
+      background: rgba(255,255,255,0.82);
       border: 1px solid var(--line);
       border-radius: 20px;
-      backdrop-filter: blur(12px);
       box-shadow: var(--shadow);
     }
 
-    .stat strong {
+    .highlight-box strong {
       display: block;
-      font-size: 1.5rem;
-      margin-bottom: 6px;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: var(--text);
     }
 
-    .stat span {
+    .highlight-box span {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05));
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.96));
       border: 1px solid var(--line);
       border-radius: 30px;
-      padding: 24px;
+      padding: 28px;
       box-shadow: var(--shadow);
       position: relative;
       overflow: hidden;
@@ -201,11 +209,11 @@
     .hero-card::before {
       content: "";
       position: absolute;
-      inset: auto -20% -30% auto;
+      inset: auto -16% -20% auto;
       width: 240px;
       height: 240px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(110,231,249,0.22), transparent 70%);
+      background: radial-gradient(circle, rgba(79,70,229,0.12), transparent 70%);
       filter: blur(10px);
     }
 
@@ -217,14 +225,15 @@
       place-items: center;
       font-size: 1.7rem;
       font-weight: 900;
-      color: #08101d;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       margin-bottom: 18px;
     }
 
     .hero-card h3 {
       margin: 0 0 12px;
       font-size: 1.4rem;
+      color: var(--text);
     }
 
     .chips {
@@ -238,14 +247,14 @@
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      color: var(--muted);
-      background: rgba(255,255,255,0.05);
+      color: var(--primary-dark);
+      background: linear-gradient(90deg, #eef2ff, #ecfeff);
       font-size: 0.9rem;
       font-weight: 600;
     }
 
     section {
-      padding: 34px 0;
+      padding: 38px 0;
     }
 
     .section-head {
@@ -257,15 +266,16 @@
     }
 
     .section-head h2 {
-      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
       margin: 0 0 8px;
+      color: var(--text);
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 68ch;
-      line-height: 1.7;
+      max-width: 70ch;
+      line-height: 1.75;
     }
 
     .grid-2 {
@@ -275,20 +285,86 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.88);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
     }
 
-    .card h3 { margin-top: 0; }
-    .card p, .card li { color: var(--muted); line-height: 1.75; }
+    .card h3 { 
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    .card p, .card li { 
+      color: var(--muted); 
+      line-height: 1.8; 
+    }
 
     .highlight {
-      background: linear-gradient(135deg, rgba(110,231,249,0.12), rgba(167,139,250,0.12));
-      border-color: rgba(110,231,249,0.25);
+      background: linear-gradient(135deg, rgba(79,70,229,0.07), rgba(6,182,212,0.07));
+      border-color: rgba(79,70,229,0.15);
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .pillar {
+      padding: 20px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .pillar h4 { 
+      margin: 10px 0 8px; 
+      color: var(--text);
+    }
+
+    .pillar p { 
+      margin: 0; 
+      color: var(--muted); 
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .skill-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #eef2ff, #ecfeff);
+      border: 1px solid #dbeafe;
+      color: var(--primary-dark);
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
     .artifact-grid {
@@ -300,13 +376,14 @@
     .artifact-card {
       overflow: hidden;
       padding: 0;
+      background: rgba(255,255,255,0.92);
     }
 
     .artifact-media {
       position: relative;
       aspect-ratio: 16 / 9;
       overflow: hidden;
-      background: linear-gradient(135deg, #16203b, #0e1833);
+      background: linear-gradient(135deg, #e0e7ff, #ecfeff);
     }
 
     .artifact-media img {
@@ -316,7 +393,7 @@
       transition: transform 0.5s ease;
     }
 
-    .artifact-card:hover .artifact-media img { transform: scale(1.04); }
+    .artifact-card:hover .artifact-media img { transform: scale(1.03); }
 
     .artifact-body {
       padding: 22px;
@@ -326,9 +403,9 @@
       display: inline-flex;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(110,231,249,0.1);
-      color: var(--accent);
-      border: 1px solid rgba(110,231,249,0.22);
+      background: rgba(79,70,229,0.08);
+      color: var(--primary);
+      border: 1px solid rgba(79,70,229,0.15);
       font-size: 0.85rem;
       font-weight: 700;
       margin-bottom: 12px;
@@ -337,6 +414,12 @@
     .artifact-body h3 {
       margin: 0 0 10px;
       font-size: 1.35rem;
+      color: var(--text);
+    }
+
+    .artifact-body p {
+      color: var(--muted);
+      line-height: 1.75;
     }
 
     .artifact-meta {
@@ -350,7 +433,7 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 14px;
-      background: rgba(255,255,255,0.04);
+      background: var(--surface-2);
     }
 
     .meta-box strong {
@@ -376,7 +459,7 @@
       padding: 16px;
       border-radius: 18px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
+      background: #ffffff;
     }
 
     .detail-row strong {
@@ -387,47 +470,11 @@
 
     .detail-row p { margin: 0; }
 
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .pillar {
-      padding: 20px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
-    }
-
-    .pillar h4 { margin: 10px 0 8px; }
-    .pillar p { margin: 0; color: var(--muted); }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
-    }
-
-    .timeline-item .year {
-      font-weight: 800;
-      color: var(--accent);
-    }
-
     .cta {
       text-align: center;
-      padding: 28px;
-      background: linear-gradient(135deg, rgba(110,231,249,0.12), rgba(167,139,250,0.12));
-      border: 1px solid rgba(110,231,249,0.2);
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(6,182,212,0.08));
+      border: 1px solid rgba(79,70,229,0.14);
       border-radius: 30px;
       box-shadow: var(--shadow);
     }
@@ -440,12 +487,13 @@
 
     .footer-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       gap: 14px;
       align-items: center;
       flex-wrap: wrap;
       border-top: 1px solid var(--line);
       padding-top: 18px;
+      text-align: center;
     }
 
     .modal {
@@ -454,7 +502,7 @@
       display: none;
       place-items: center;
       padding: 20px;
-      background: rgba(4, 8, 18, 0.82);
+      background: rgba(15, 23, 42, 0.75);
       z-index: 2000;
       backdrop-filter: blur(10px);
     }
@@ -465,7 +513,7 @@
       width: min(1100px, 100%);
       max-height: 90vh;
       overflow: auto;
-      background: #0c1328;
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 18px;
@@ -481,7 +529,7 @@
       height: 44px;
       border-radius: 50%;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.08);
+      background: #ffffff;
       color: var(--text);
       cursor: pointer;
       display: grid;
@@ -500,8 +548,8 @@
       display: none;
       place-items: center;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #06101a;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
       font-weight: 900;
       box-shadow: var(--shadow);
       z-index: 1001;
@@ -513,11 +561,12 @@
       .hero,
       .grid-2,
       .artifact-grid,
-      .pillars {
+      .pillars,
+      .skills-grid,
+      .hero-highlights {
         grid-template-columns: 1fr;
       }
 
-      .stats,
       .artifact-meta {
         grid-template-columns: 1fr;
       }
@@ -526,9 +575,6 @@
     @media (max-width: 700px) {
       nav { align-items: flex-start; }
       .nav-links { justify-content: flex-start; }
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
       .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -544,14 +590,14 @@
     <div class="container">
       <nav>
         <a href="#home" class="brand">
-          <span class="brand-badge">AA</span>
+          <span class="brand-badge">SR</span>
           <span>Sai Rishi Varma Dendukuri</span>
         </a>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#value">Value Proposition</a>
+          <a href="#skills">Skills</a>
           <a href="#artifacts">Artifacts</a>
-          <a href="#journey">Journey</a>
           <a href="#contact">Contact</a>
           <a href="#artifacts" class="btn btn-primary">View Portfolio</a>
         </div>
@@ -562,7 +608,7 @@
   <main id="home" class="container">
     <section class="hero">
       <div>
-        <div class="eyebrow">AI • Machine Learning • Data Analytics Portfolio</div>
+        <div class="eyebrow">AI • Data • Portfolio</div>
         <h1>Building practical AI solutions with clarity, purpose, and impact.</h1>
         <p>
           I am <strong>Sai Rishi Varma Dendukuri</strong>, a data and AI professional focused on translating machine learning concepts into practical, user-centered solutions. This portfolio highlights my academic artifacts, technical growth, and the value I bring through analytical thinking, structured problem-solving, and thoughtful design.
@@ -571,23 +617,30 @@
           <a href="#artifacts" class="btn btn-primary">Explore Artifacts</a>
           <a href="#about" class="btn btn-secondary">Read My Bio</a>
         </div>
-        
-          <div class="stat"><strong>AI/ML</strong><span>Focused on machine learning, analytics, and applied solutions</span></div>
-          <div class="stat"><strong>Modern</strong><span>Responsive, interactive, and portfolio-ready design</span></div>
+
+        <div class="hero-highlights">
+          <div class="highlight-box">
+            <strong>Skills</strong>
+            <span>Python, SQL, Power BI, Tableau, Machine Learning, Deep Learning, NLP, ETL, Dashboarding, and Data Visualization</span>
+          </div>
+          <div class="highlight-box">
+            <strong>Professional Focus</strong>
+            <span>Building practical AI, analytics, and data-driven solutions that combine technical depth with clarity, usability, and business impact</span>
+          </div>
         </div>
       </div>
 
       <div class="hero-card">
         <div class="avatar">AI</div>
-        <h3>Portfolio Snapshot</h3>
+        <h3>Professional Snapshot</h3>
         <p style="color: var(--muted); line-height: 1.75; margin: 0;">
-          This website is structured to align with professional portfolio requirements by including a professional bio, personal value proposition, and artifact entries that follow a consistent academic template.
+          This portfolio is designed to present my professional bio, personal value proposition, technical skills, and selected artifacts in a clean, structured, and visually engaging format.
         </p>
         <div class="chips">
           <span class="chip">Professional Bio</span>
           <span class="chip">Value Proposition</span>
-          <span class="chip">Artifact Template</span>
-          <span class="chip">User-Friendly Design</span>
+          <span class="chip">Technical Skills</span>
+          <span class="chip">Artifacts</span>
           <span class="chip">Portfolio Ready</span>
         </div>
       </div>
@@ -655,11 +708,69 @@
       </div>
     </section>
 
+    <section id="skills">
+      <div class="section-head">
+        <div>
+          <h2>Skills</h2>
+          <p>A snapshot of the tools, technologies, and core areas I use to build practical analytics and AI solutions.</p>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming & Data</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Excel</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Data Analysis</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Visualization & BI</h3>
+          <div class="skill-tags">
+            <span>Power BI</span>
+            <span>Tableau</span>
+            <span>Dashboard Design</span>
+            <span>Data Storytelling</span>
+            <span>Reporting</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>AI & Machine Learning</h3>
+          <div class="skill-tags">
+            <span>Machine Learning</span>
+            <span>Deep Learning</span>
+            <span>Neural Networks</span>
+            <span>NLP</span>
+            <span>Model Evaluation</span>
+            <span>Generative AI</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>Data Engineering & Workflow</h3>
+          <div class="skill-tags">
+            <span>ETL</span>
+            <span>Data Cleaning</span>
+            <span>Data Processing</span>
+            <span>GitHub</span>
+            <span>Workflow Design</span>
+            <span>Documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="artifacts">
       <div class="section-head">
         <div>
           <h2>Portfolio Artifacts</h2>
-          <p>The current portfolio includes one featured artifact, structured using the course template with title, introduction, description, objective, process, tools and technologies used, value proposition, unique value, relevance, and references when applicable.</p>
+          <p>The portfolio below includes selected artifacts structured with title, introduction, description, objective, process, tools and technologies used, value proposition, unique value, relevance, and references where applicable.</p>
         </div>
       </div>
 
@@ -693,83 +804,141 @@
           </div>
         </article>
 
-    <article class="card artifact-card">
-  <div class="artifact-media">
-    <img src="artifact2_cover_image.png" alt="Neural Network Playground Visualization" />
-  </div>
+        <article class="card artifact-card">
+          <div class="artifact-media">
+            <img src="artifact2_cover_image.png" alt="Neural Network Playground Visualization" />
+          </div>
 
-  <div class="artifact-body">
-    <span class="artifact-tag">Artifact 2</span>
-    <h3>Neural Network Playground Visualization</h3>
+          <div class="artifact-body">
+            <span class="artifact-tag">Artifact 2</span>
+            <h3>Neural Network Playground Visualization</h3>
 
-    <p>
-      This artifact presents a visual explanation of neural network architecture and its core components, including layers, neurons, weights, activation functions, loss functions, and optimization algorithms. Using TensorFlow Playground, the project demonstrates how data flows through the network and how different configurations affect model performance.
-    </p>
+            <p>
+              This artifact presents a visual explanation of neural network architecture and its core components, including layers, neurons, weights, activation functions, loss functions, and optimization algorithms. Using TensorFlow Playground, the project demonstrates how data flows through the network and how different configurations affect model performance.
+            </p>
 
-    <div class="artifact-meta">
-      <div class="meta-box">
-        <strong>Objective</strong>
-        <span>To understand and visualize how neural networks learn and process data.</span>
+            <div class="artifact-meta">
+              <div class="meta-box">
+                <strong>Objective</strong>
+                <span>To understand and visualize how neural networks learn and process data.</span>
+              </div>
+              <div class="meta-box">
+                <strong>Tools</strong>
+                <span>TensorFlow Playground, Neural Networks, Visualization Techniques</span>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="detail-row">
+                <strong>Introduction</strong>
+                <p>This artifact focuses on exploring neural network behavior using an interactive visualization tool.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Description</strong>
+                <p>The project analyzes how components such as layers, neurons, and activation functions influence the model’s learning and decision boundaries.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Process</strong>
+                <p>I experimented with different network configurations, including varying layers, neurons, and noise levels, and observed their impact on performance.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Value Proposition</strong>
+                <p>This artifact demonstrates my ability to understand, visualize, and explain complex deep learning concepts clearly.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Unique Value</strong>
+                <p>It combines theoretical understanding with interactive experimentation, making abstract concepts intuitive.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Relevance</strong>
+                <p>This work is directly relevant to AI and machine learning, highlighting practical understanding of neural networks.</p>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
+              <a class="btn btn-primary" href="2.4_assignment.pptx" target="_blank">
+                View Presentation
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card artifact-card">
+          <div class="artifact-media">
+            <img src="3.4_Infographic.png" alt="Training Process and Resource Requirements of Generative AI LLMs infographic" />
+          </div>
+
+          <div class="artifact-body">
+            <span class="artifact-tag">Artifact 3</span>
+            <h3>Training Process and Resource Requirements of Generative AI LLMs</h3>
+
+            <p>
+              This artifact presents a visual explanation of how generative AI large language models are developed, from data collection through deployment, while also highlighting the major resources involved in training.
+            </p>
+
+            <div class="artifact-meta">
+              <div class="meta-box">
+                <strong>Objective</strong>
+                <span>To clearly illustrate the end-to-end training lifecycle of LLMs and the key cost and performance drivers involved.</span>
+              </div>
+              <div class="meta-box">
+                <strong>Tools</strong>
+                <span>Infographic design, AI research synthesis, visual communication, structured content design</span>
+              </div>
+            </div>
+
+            <div class="details">
+              <div class="detail-row">
+                <strong>Introduction</strong>
+                <p>This artifact explains the major stages of training generative AI large language models and organizes the resource requirements into meaningful categories.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Description</strong>
+                <p>The infographic covers data collection, data processing, model training, fine-tuning with RLHF, and deployment. It also classifies the major training resources into data, compute, energy, and time, and includes model examples such as GPT-4, Claude 2, and LLaMA 2.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Process</strong>
+                <p>I structured the content into a left-to-right visual flow, grouped the main resource categories, and used examples to make the complexity of LLM training more accessible to a broad audience.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Value Proposition</strong>
+                <p>This artifact demonstrates my ability to simplify advanced AI concepts, classify technical information clearly, and communicate it through professional visual design.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Unique Value</strong>
+                <p>It combines technical understanding, structured classification, and visual storytelling to present a complex topic in a clear and engaging format.</p>
+              </div>
+
+              <div class="detail-row">
+                <strong>Relevance</strong>
+                <p>This work is relevant to modern AI and machine learning because it highlights the infrastructure, resource trade-offs, and lifecycle thinking required to develop large-scale generative AI systems.</p>
+              </div>
+            </div>
+
+            <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
+              <a class="btn btn-primary" href="llm_training_infographic.png" target="_blank">
+                Open Infographic
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="meta-box">
-        <strong>Tools</strong>
-        <span>TensorFlow Playground, Neural Networks, Visualization Techniques</span>
-      </div>
-    </div>
-
-    <div class="details">
-      <div class="detail-row">
-        <strong>Introduction</strong>
-        <p>This artifact focuses on exploring neural network behavior using an interactive visualization tool.</p>
-      </div>
-
-      <div class="detail-row">
-        <strong>Description</strong>
-        <p>The project analyzes how components such as layers, neurons, and activation functions influence the model’s learning and decision boundaries.</p>
-      </div>
-
-      <div class="detail-row">
-        <strong>Process</strong>
-        <p>I experimented with different network configurations, including varying layers, neurons, and noise levels, and observed their impact on performance.</p>
-      </div>
-
-      <div class="detail-row">
-        <strong>Value Proposition</strong>
-        <p>This artifact demonstrates my ability to understand, visualize, and explain complex deep learning concepts clearly.</p>
-      </div>
-
-      <div class="detail-row">
-        <strong>Unique Value</strong>
-        <p>It combines theoretical understanding with interactive experimentation, making abstract concepts intuitive.</p>
-      </div>
-
-      <div class="detail-row">
-        <strong>Relevance</strong>
-        <p>This work is directly relevant to AI and machine learning, highlighting practical understanding of neural networks.</p>
-      </div>
-    </div>
-
-    <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
-      <a class="btn btn-primary" 
-         href="2.4_assignment.pptx" 
-         target="_blank">
-        View Presentation
-      </a>
-    </div>
-  </div>
-</article>
-      </div>
-
-      
     </section>
-
-    
 
     <section id="contact">
       <div class="cta">
-        <h2 style="margin-top: 0;">Portfolio-Ready and Easy to Share</h2>
+        <h2 style="margin-top: 0; color: var(--text);">Portfolio-Ready and Easy to Share</h2>
         <p style="color: var(--muted); max-width: 70ch; margin: 0 auto 18px; line-height: 1.75;">
-          This HTML portfolio is designed to be uploaded to GitHub Pages, Netlify, Google Drive, or any shareable hosting platform so your instructor can access it easily.
+          This HTML portfolio is designed to be uploaded to GitHub Pages or any shareable hosting platform so it can be viewed easily and presented professionally.
         </p>
         <a class="btn btn-primary" href="#home">Back to Top</a>
       </div>
@@ -778,8 +947,7 @@
 
   <footer>
     <div class="container footer-row">
-      <div>© 2026 Sai Rishi Varma Dendukuri • AI & Machine Learning Portfolio</div>
-      <div>Note: Reflections should be submitted separately in Brightspace, not included in the portfolio.</div>
+      <div>© 2026 Sai Rishi Varma Dendukuri • Professional Portfolio</div>
     </div>
   </footer>
 
