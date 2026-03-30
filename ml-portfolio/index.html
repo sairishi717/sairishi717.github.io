@@ -126,7 +126,14 @@
 
     .hero {
       padding: 76px 0 42px;
-      display: block;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-content {
+      min-width: 0;
     }
 
     .eyebrow {
@@ -169,9 +176,9 @@
 
     .hero-highlights {
       display: grid;
-      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
       gap: 16px;
-      max-width: 980px;
+      max-width: 100%;
     }
 
     .highlight-box {
@@ -193,6 +200,72 @@
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.6;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .visual-card {
+      width: 100%;
+      max-width: 390px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-card h3 {
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      color: var(--text);
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .visual-item {
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .visual-item strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .visual-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .visual-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .visual-tags span {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #eef2ff, #ecfeff);
+      border: 1px solid #dbeafe;
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
     }
 
     section {
@@ -500,6 +573,7 @@
     .scroll-top.show { display: grid; }
 
     @media (max-width: 980px) {
+      .hero,
       .grid-2,
       .artifact-grid,
       .pillars,
@@ -508,7 +582,8 @@
         grid-template-columns: 1fr;
       }
 
-      .artifact-meta {
+      .artifact-meta,
+      .visual-grid {
         grid-template-columns: 1fr;
       }
 
@@ -552,24 +627,61 @@
 
   <main id="home" class="container">
     <section class="hero">
-      <div class="eyebrow">AI • Data • Portfolio</div>
-      <h1>Building practical AI solutions with clarity, purpose, and impact.</h1>
-      <p>
-        I am <strong>Sai Rishi Varma Dendukuri</strong>, a data and AI professional focused on translating machine learning concepts into practical, user-centered solutions. This portfolio highlights my academic artifacts, technical growth, and the value I bring through analytical thinking, structured problem-solving, and thoughtful design.
-      </p>
-      <div class="hero-actions">
-        <a href="#artifacts" class="btn btn-primary">Explore Artifacts</a>
-        <a href="#about" class="btn btn-secondary">Read My Bio</a>
+      <div class="hero-content">
+        <div class="eyebrow">AI • Data • Portfolio</div>
+        <h1>Building practical AI solutions with clarity, purpose, and impact.</h1>
+        <p>
+          I am <strong>Sai Rishi Varma Dendukuri</strong>, a data and AI professional focused on translating machine learning concepts into practical, user-centered solutions. This portfolio highlights my academic artifacts, technical growth, and the value I bring through analytical thinking, structured problem-solving, and thoughtful design.
+        </p>
+        <div class="hero-actions">
+          <a href="#artifacts" class="btn btn-primary">Explore Artifacts</a>
+          <a href="#about" class="btn btn-secondary">Read My Bio</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight-box">
+            <strong>Skills</strong>
+            <span>Python, SQL, Power BI, Tableau, Machine Learning, Deep Learning, NLP, ETL, Dashboarding, and Data Visualization</span>
+          </div>
+          <div class="highlight-box">
+            <strong>Professional Focus</strong>
+            <span>Building practical AI, analytics, and data-driven solutions that combine technical depth with clarity, usability, and business impact</span>
+          </div>
+        </div>
       </div>
 
-      <div class="hero-highlights">
-        <div class="highlight-box">
-          <strong>Skills</strong>
-          <span>Python, SQL, Power BI, Tableau, Machine Learning, Deep Learning, NLP, ETL, Dashboarding, and Data Visualization</span>
-        </div>
-        <div class="highlight-box">
-          <strong>Professional Focus</strong>
-          <span>Building practical AI, analytics, and data-driven solutions that combine technical depth with clarity, usability, and business impact</span>
+      <div class="hero-visual">
+        <div class="visual-card">
+          <h3>What I Work With</h3>
+
+          <div class="visual-grid">
+            <div class="visual-item">
+              <strong>Data</strong>
+              <span>SQL, ETL, Analytics</span>
+            </div>
+
+            <div class="visual-item">
+              <strong>AI/ML</strong>
+              <span>Models, NLP, Deep Learning</span>
+            </div>
+
+            <div class="visual-item">
+              <strong>Visualization</strong>
+              <span>Power BI, Tableau</span>
+            </div>
+
+            <div class="visual-item">
+              <strong>Impact</strong>
+              <span>Insights → Decisions</span>
+            </div>
+          </div>
+
+          <div class="visual-tags">
+            <span>Machine Learning</span>
+            <span>Data Engineering</span>
+            <span>Analytics</span>
+            <span>AI Systems</span>
+          </div>
         </div>
       </div>
     </section>
@@ -798,7 +910,7 @@
 
         <article class="card artifact-card">
           <div class="artifact-media">
-            <img src="llm_training_infographic.png" alt="Training Process and Resource Requirements of Generative AI LLMs infographic" />
+            <img src="3.4_Infographic.png" alt="Training Process and Resource Requirements of Generative AI LLMs infographic" />
           </div>
 
           <div class="artifact-body">
@@ -853,7 +965,7 @@
             </div>
 
             <div class="hero-actions" style="margin-top: 18px; margin-bottom: 0;">
-              <a class="btn btn-primary" href="llm_training_infographic.png" target="_blank">
+              <a class="btn btn-primary" href="3.4_Infographic.png" target="_blank">
                 Open Infographic
               </a>
             </div>
